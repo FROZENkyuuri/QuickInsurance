@@ -1,0 +1,31 @@
+﻿@page "/bmi"
+
+<h3>BMI</h3>
+
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>@_name</td>
+    </tr>
+    <tr>
+        <td>Height</td>
+        <td>@_height</td>
+    </tr>
+    <tr>
+        <td>Weight</td>
+        <td>@_weight</td>
+    </tr>
+</table>
+
+
+@code {
+    string _name = "hideki koike";
+    
+    double _height = 180.1, _weight = 70.0;
+
+    void CalcuBmi()
+    {
+
+    }
+
+}

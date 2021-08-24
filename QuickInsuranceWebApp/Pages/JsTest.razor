@@ -1,0 +1,32 @@
+﻿@page "/jsExample"
+@inject IJSRuntime _js;
+
+<h1>Call JS Example 5</h1>
+
+<p>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="inputEmail4">First name</label>
+        <input type="text" @bind="@_firstName" class="form-control" id="inputEmail4" placeholder="Tarou">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputPassword4">Last name</label>
+        <input type="text" @bind="@_lastName" class="form-control" id="inputPassword4" placeholder="Dann">
+    </div>
+</div>
+
+
+<button @onclick="CallJS">Set Stock</button>
+</p>
+
+@code {
+    // https://qiita.com/nobu17/items/7465006ce24a4490183b
+    
+    string _firstName = "", _lastName = "";
+
+    async void CallJS()
+    {
+        @* var module = await _js.InvokeAsync<IJSObjectReference>("import", "./js/extentions.js"); *@
+        await _js.InvokeVoidAsync("GetItem", _firstName+_lastName);
+    }
+}
