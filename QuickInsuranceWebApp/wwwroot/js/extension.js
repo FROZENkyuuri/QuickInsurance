@@ -1,16 +1,16 @@
 window.blazorExtensions = {
-    TestJs: function(key) {
+    TestJs(key) {
         alert(key);
         console.log(key);
     },
 
     // Web Storageに値を保存するメソッド
-    SetItem: function(key, value) {
+    SetItem(key, value) {
         localStorage.setItem(key, value);
     },
     
     // Web Storageから値を取得するメソッド
-    GetItem: function(key) {
+    GetItem(key) {
         return localStorage.getItem(key);
     }
 };
