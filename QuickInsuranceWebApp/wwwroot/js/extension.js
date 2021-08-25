@@ -1,15 +1,16 @@
-
-    function TestJs() {
-        console.log("hogehoge");
-    }
+window.blazorExtensions = {
+    TestJs: function(key) {
+        alert(key);
+        console.log(key);
+    },
 
     // Web Storageに値を保存するメソッド
-    function SetItem(key, value) {
+    SetItem: function(key, value) {
         localStorage.setItem(key, value);
-    }
+    },
     
     // Web Storageから値を取得するメソッド
-    function GetItem(key) {
-        alert(key);
+    GetItem: function(key) {
         return localStorage.getItem(key);
     }
+};

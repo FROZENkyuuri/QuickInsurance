@@ -26,7 +26,6 @@
     protected override async Task OnInitializedAsync()
     {
         var countText = await _localStorage.GetItem("Counter");
-
         if(Int32.TryParse(countText, out var count)){
             _currentCount = count;
         }

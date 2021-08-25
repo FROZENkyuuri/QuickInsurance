@@ -27,6 +27,6 @@
     async void CallJS()
     {
         @* var module = await _js.InvokeAsync<IJSObjectReference>("import", "./js/extentions.js"); *@
-        await _js.InvokeVoidAsync("GetItem", _firstName+_lastName);
+        await _js.InvokeVoidAsync("TestJs", _firstName+_lastName);
     }
 }
