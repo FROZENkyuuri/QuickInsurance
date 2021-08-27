@@ -12,5 +12,9 @@ window.blazorExtensions = {
     // Web Storageから値を取得するメソッド
     GetItem(key) {
         return localStorage.getItem(key);
+    },
+
+    RemoveItem(key){
+        localStorage.removeItem(key);
     }
 };

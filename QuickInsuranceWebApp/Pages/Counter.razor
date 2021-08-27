@@ -3,24 +3,38 @@
 
 <h1>Counter</h1>
 
-<p>Current count: @_currentCount</p>
+<p>Your pay: @_currentCount JPYC</p>
 
-<div class="slidecontainer" style="margin-bottom: 20px;">
-    <input type="range" min="25" max="300" value="300" class="slider" id="myRange" style="width:100%;">
+<div>
+    <button class="btn btn-primary" @onclick="IncrementCount"> + </button>
+    <button class="btn btn-primary" @onclick="DecrementCount"> - </button>
+    <button class="btn btn-primary" @onclick="ClearCount"> Clear </button>
 </div>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
     int _currentCount = 0;
 
+    int _maxVal = 100 * 10, _minVal = 0, _step = 100;
+
     [Inject]
     LocalStorage _localStorage { get; set; }
 
-    async void IncrementCount()
-    {
-        _currentCount++;
+    async void IncrementCount(){
+        if(_currentCount > _maxVal) _currentCount += _step;
+
         await _localStorage.SetItem("Counter", _currentCount.ToString());
+    }
+
+    async void DecrementCount(){
+        if(_currentCount < _minVal) _currentCount -= _step;
+
+        await _localStorage.SetItem("Counter", _currentCount.ToString());
+    }
+
+    async void ClearCount(){
+        await _localStorage.RemoveItem("Counter");
+        _currentCount = 0;
     }
 
     protected override async Task OnInitializedAsync()
