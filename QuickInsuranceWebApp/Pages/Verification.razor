@@ -1,15 +1,39 @@
 ﻿@page "/Verification"
+@inject IJSRuntime JSRuntime;
 
 <h3>Verification</h3>
+
 <p>Current Time: @now</p>
+
+<p>JPYC Amount: @_jpycValue</p>
+
 <button class="btn btn-primary" @onclick="UpdateDate">Update Date</button>
+
+<button class="btn btn-primary" @onclick="Contract">Confirm?</button>
 
 
 @code {
+    [Inject]
+    LocalStorage _localStorage { get; set; }
+
+    int _jpycValue;
     DateTime now = DateTime.Now;
 
     void UpdateDate()
     {
         now = DateTime.Now;
+    }
+
+    void Contract()
+    {
+        // DO Smart Contract
+    }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        var countText = await _localStorage.GetItem("Counter");
+        if(Int32.TryParse(countText, out var count)){
+            _jpycValue = count;
+        }
     }
 }
