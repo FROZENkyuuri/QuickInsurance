@@ -1,0 +1,15 @@
+﻿@page "/Verification"
+
+<h3>Verification</h3>
+<p>Current Time: @now</p>
+<button class="btn btn-primary" @onclick="UpdateDate">Update Date</button>
+
+
+@code {
+    DateTime now = DateTime.Now;
+
+    void UpdateDate()
+    {
+        now = DateTime.Now;
+    }
+}
