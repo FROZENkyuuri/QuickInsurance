@@ -1,0 +1,74 @@
+﻿@page "/AddEqi"
+<h3>Earthquake Intensity</h3>
+
+<body>
+<div class="form-group col-md-auto ">
+    <button class="btn btn-primary" @onclick="Level1">
+        震度 5- : Level 1
+    </button>
+    <button class="btn btn-primary" @onclick="Level2">
+        震度 5 : Level 2
+    </button>
+    <button class="btn btn-primary" @onclick="Level3">
+        震度 5+ : Level 3
+    </button>
+    <button class="btn btn-primary" @onclick="Level4">
+        震度 6- : Level 4
+    </button>
+    <button class="btn btn-primary" @onclick="Level5">
+        震度 6 : Level 5
+    </button>
+    <button class="btn btn-primary" @onclick="Level6">
+        震度 6+ : Level 6
+    </button>
+    <button class="btn btn-primary" @onclick="Level7">
+        震度 7 : Level 7
+    </button>
+</div>
+
+<p>
+    Selected Earthquake Intensity: @_eqiLevelArray[_level]
+</p>
+
+<button class="btn btn-primary" @onclick="SendEqiContract">
+    Do Earthquake!!!
+</button>
+</body>
+
+
+@code {
+
+    readonly string[] _eqiLevelArray
+        = { "震度 5-", "震度 5", "震度 5+", "震度 6-", "震度 6", "震度 6+", "震度 7" };
+
+    string _eqiLevel;
+
+    int _level = 1;
+
+    void Level1() => _level = 0;
+    void Level2() => _level = 1;
+    void Level3() => _level = 2;
+    void Level4() => _level = 3;
+    void Level5() => _level = 4;
+    void Level6() => _level = 5;
+    void Level7() => _level = 6;
+
+
+    // TODO: should use Linq.
+    void GetEqiLevel(string eqi)
+    {
+        for (int i = 0; i < _eqiLevelArray.Count(); i++)
+        {
+            if (string.Equals(eqi, _eqiLevelArray[i]))
+            {
+                _level = i;
+            }
+        }
+    }
+
+    void SendEqiContract()
+    {
+    // Do Smart Contract with _level
+    }
+
+}
