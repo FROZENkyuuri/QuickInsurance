@@ -1,7 +1,7 @@
 ﻿@page "/JpycInputPage"
 @inject IJSRuntime JSRuntime;
 
-<h1>Counter</h1>
+<h1>Please set your payment value</h1>
 
 <p>Your pay: @_currentCount JPYC</p>
 
@@ -21,26 +21,26 @@
     LocalStorage _localStorage { get; set; }
 
     async void IncrementCount(){
-        if(_currentCount > _maxVal) _currentCount += _step;
+        if(_currentCount < _maxVal) _currentCount += _step;
 
-        await _localStorage.SetItem("Counter", _currentCount.ToString());
+        await _localStorage.SetItem(KeyList.Jpyc, _currentCount.ToString());
     }
 
     async void DecrementCount(){
-        if(_currentCount < _minVal) _currentCount -= _step;
+        if(_currentCount > _minVal) _currentCount -= _step;
 
-        await _localStorage.SetItem("Counter", _currentCount.ToString());
+        await _localStorage.SetItem(KeyList.Jpyc, _currentCount.ToString());
     }
 
     async void ClearCount(){
-        await _localStorage.RemoveItem("Counter");
         _currentCount = 0;
+        await _localStorage.RemoveItem(KeyList.Jpyc);
     }
 
     protected override async Task OnInitializedAsync()
     {
-        var countText = await _localStorage.GetItem("Counter");
-        if(Int32.TryParse(countText, out var count)){
+        var countText = await _localStorage.GetItem(KeyList.Jpyc);
+        if(int.TryParse(countText, out var count)){
             _currentCount = count;
         }
     }
