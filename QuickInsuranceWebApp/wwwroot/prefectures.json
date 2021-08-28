@@ -1,0 +1,19 @@
+﻿{
+  "prefectures": [
+    {
+      "name": "Hokkaido",
+      "latitude": 43.06417,
+      "longitude": 141.34694
+    },
+    {
+      "name": "Aomori",
+      "latitude": 40.82444,
+      "longitude": 140.74
+    },
+    {
+      "name": "Iwate",
+      "latitude": 40.82444,
+      "longitude": 140.74
+    }
+  ]
+}
