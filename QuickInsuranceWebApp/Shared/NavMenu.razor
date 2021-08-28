@@ -20,12 +20,12 @@
                 Personal Info
             </NavLink>
         </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="JpycInputPage">
-                <span class="oi oi-minus" aria-hidden="true"></span>
-                Input amount
-            </NavLink>
-        </li>
+        @* <li class="nav-item px-3"> *@
+        @*     <NavLink class="nav-link" href="JpycInputPage"> *@
+        @*         <span class="oi oi-minus" aria-hidden="true"></span> *@
+        @*         Input amount *@
+        @*     </NavLink> *@
+        @* </li> *@
         <li class="nav-item px-5">
             <NavLink class="nav-link" href="Verification">
                 <span class="oi oi-heart" aria-hidden="true"></span>
@@ -54,12 +54,12 @@
 </div>
 
 @code {
-    private bool collapseNavMenu = true;
+    private bool collapseNavMenu = false;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
-        collapseNavMenu = !collapseNavMenu;
+        @* collapseNavMenu = !collapseNavMenu; *@
     }
 }

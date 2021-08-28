@@ -1,9 +1,6 @@
 ﻿@page "/PersonalInfo"
 @inject IJSRuntime _js;
 
-<h1>Call JS Example 5</h1>
-
-<p>
 <div class="form-row">
     <div class="form-group col-md-1">
         <label for="inputEmail4">First name</label>
@@ -34,9 +31,24 @@
 <p>Your Longitude: @_longitude</p>
 <p>Your Latitude: @_latitude</p>
 
+@* <button @onclick="SetAddress">Confirm your address</button> *@
 
-<button @onclick="CallJS">Set Stock</button>
-</p>
+<hr>
+
+<p>Your pay: @_currentCount JPYC</p>
+
+<div>
+    <button class="btn btn-primary" @onclick="IncrementCount"> + </button>
+    <button class="btn btn-primary" @onclick="DecrementCount"> - </button>
+    <button class="btn btn-primary" @onclick="ClearCount"> Clear </button>
+</div>
+
+<hr>
+
+
+
+
+
 
 @code {
     // https://qiita.com/nobu17/items/7465006ce24a4490183b
@@ -46,9 +58,43 @@
     int _longitude, _latitude;
 
 
-    async void CallJS()
+    async void SetAddress()
     {
         @* var module = await _js.InvokeAsync<IJSObjectReference>("import", "./js/extentions.js"); *@
-        await _js.InvokeVoidAsync("TestJs", _firstName + _lastName);
+    }
+}
+
+@code
+{
+    int _currentCount = 0;
+
+    int _maxVal = 100 * 10, _minVal = 0, _step = 100;
+
+    [Inject]
+    LocalStorage _localStorage { get; set; }
+
+    async void IncrementCount(){
+        if(_currentCount < _maxVal) _currentCount += _step;
+
+        await _localStorage.SetItem(KeyList.Jpyc, _currentCount.ToString());
+    }
+
+    async void DecrementCount(){
+        if(_currentCount > _minVal) _currentCount -= _step;
+
+        await _localStorage.SetItem(KeyList.Jpyc, _currentCount.ToString());
+    }
+
+    async void ClearCount(){
+        _currentCount = 0;
+        await _localStorage.RemoveItem(KeyList.Jpyc);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var countText = await _localStorage.GetItem(KeyList.Jpyc);
+        if(int.TryParse(countText, out var count)){
+            _currentCount = count;
+        }
     }
 }
