@@ -1,5 +1,4 @@
-﻿{
-  "prefectures": [
+﻿[
     {
       "name": "Hokkaido",
       "latitude": 43.06417,
@@ -15,5 +14,4 @@
       "latitude": 40.82444,
       "longitude": 140.74
     }
-  ]
-}
+]
