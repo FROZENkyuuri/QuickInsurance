@@ -2,101 +2,126 @@
     {
       "name": "Hokkaido",
       "latitude": 43.06417,
-      "longitude": 141.34694
+      "longitude": 141.34694,
+      "id": 00
     },
     {
       "name": "Aomori",
       "latitude": 40.82444,
-      "longitude": 140.74
+      "longitude": 140.74,
+      "id":  01
     },
     {
-      "name": "Iwate",
+      "name": "Morioka"
       "latitude": 40.82444,
-      "longitude": 140.74
+      "longitude": 140.74,
+      "id":  02 
     },
     {
       "name": "Kushiro",
       "latitude": 42.9849,
-      "longitude": 144.3818
+      "longitude": 144.3818,
+      "id":  03 
     },
      {
       "name": "Fukushima",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "latitude": 37.75,
+      "longitude": 140.46778,
+      "id":  04   
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Niigata"
+      "latitude": 37.90222,
+      "longitude": 139.02361
+      "id":  05  
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Ibaraki"
+      "latitude": 36.34139,
+      "longitude": 140.44667,
+      "id":  06  
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Saitama"
+      "latitude": 35.85694,
+      "longitude": 139.64889
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Chiba"
+      "latitude": 35.60472,
+      "longitude": 140.12333,
+      "id":  07  
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Tokyo"
+      "latitude": 35.68944,
+      "longitude": 139.69167,
+      "id":  08
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Nagano"
+      "latitude": 36.65139,
+      "longitude": 138.18111,
+      "id":  09
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Nagoya"
+      "latitude": 35.18028,
+      "longitude": 136.90667,
+      "id":  10 
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Kyoto"
+      "latitude": 35.02139,
+      "longitude": 135.75556,
+      "id":  11
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Osaka"
+      "latitude": 34.68639,
+      "longitude": 135.52,
+      "id":  12
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Kobe"
+      "latitude": 34.69139,
+      "longitude": 135.18306,
+      "id":  13
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Okayama"
+      "latitude": 34.66167,
+      "longitude": 133.935,
+      "id":  14
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Yamaguchi"
+      "latitude": 34.18583,
+      "longitude": 131.47139,
+      "id":  15
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Kouchi"
+      "latitude": 33.55972,
+      "longitude": 133.53111,
+      "id":  16
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Fukuoka"
+      "latitude": 33.60639,
+      "longitude": 130.41806,
+      "id":  17
     },
      {
-      "name": "Hokkaido",
-      "latitude": 43.06417,
-      "longitude": 141.34694
+      "name": "Oita"
+      "latitude": 33.23806,
+      "longitude": 131.6125,
+      "id":  18
+    },
+     {
+      "name": "Kagoshima"
+      "latitude": 31.56028,
+      "longitude": 130.55806,
+      "id":  19
     },
 ]
